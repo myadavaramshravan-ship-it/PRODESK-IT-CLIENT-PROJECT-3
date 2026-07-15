@@ -15,11 +15,14 @@ app.use(express.json());
 const server = http.createServer(app);
 
 
-const io = new Server(server,{
-    cors:{
-        origin:process.env.CLIENT_URL,
-        methods:["GET","POST"]
-    }
+const io = new Server(server, {
+  cors: {
+    origin: [
+      "http://localhost:5173",
+      "https://prodesk-it-client-project-3-ekzzlqzpx.vercel.app",
+    ],
+    methods: ["GET", "POST"],
+  },
 });
 
 
